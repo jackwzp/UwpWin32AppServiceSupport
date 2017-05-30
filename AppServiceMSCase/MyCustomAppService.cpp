@@ -44,7 +44,7 @@ void AppServiceMSCase::MyCustomAppService::SendMessage()
         //msg->Insert("count", ++count_);
         //auto db = "Sending: " + count_.ToString() + "\n";
         //OutputDebugString(db->Data());
-
+        OutputDebugString(L"Sending Data\n");
         connection->SendMessageAsync(data_);
     }
 }
