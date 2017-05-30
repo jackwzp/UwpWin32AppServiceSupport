@@ -39,11 +39,13 @@ void AppServiceMSCase::MyCustomAppService::SendMessage()
 
     if (connection != nullptr) {
         // Sending dummy data
-        auto msg = ref new ValueSet();
-        msg->Insert("count", ++count_);
-        auto db = "Sending: " + count_.ToString() + "\n";
-        OutputDebugString(db->Data());
-        connection->SendMessageAsync(msg);
+
+        //auto msg = ref new ValueSet();
+        //msg->Insert("count", ++count_);
+        //auto db = "Sending: " + count_.ToString() + "\n";
+        //OutputDebugString(db->Data());
+
+        connection->SendMessageAsync(data_);
     }
 }
 
@@ -55,7 +57,7 @@ void AppServiceMSCase::MyCustomAppService::SendMessage()
 MyCustomAppService::MyCustomAppService()
 {
     data_ = ref new ValueSet();
-    data_->Insert("name", "test");
+    data_->Insert("count", 0);
     count_ = 0;
 }
 
